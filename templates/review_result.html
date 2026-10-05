@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Отзыв отправлен — GLOW ROOM{% endblock %}
+{% block content %}
+<section class="result">
+    <span class="success-mark">✓</span>
+    <p class="eyebrow">Готово</p>
+    <h1>Спасибо за отзыв, {{ name }}</h1>
+    <p>Мы получили вашу оценку и сохранили данные формы.</p>
+    <dl>
+        <div><dt>Товар</dt><dd>{{ product }}</dd></div>
+        <div><dt>Оценка</dt><dd>{{ rating }} из 5</dd></div>
+        <div><dt>Комментарий</dt><dd>{{ comment }}</dd></div>
+    </dl>
+    <a class="primary" href="{{ url_for('catalog') }}">Вернуться в каталог</a>
+</section>
+{% endblock %}

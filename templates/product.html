@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }} — GLOW ROOM{% endblock %}
+{% block content %}
+<section class="product-detail">
+    <div class="detail-image" style="--position: {{ product.position }}" role="img" aria-label="{{ product.name }}"></div>
+    <div class="detail-copy">
+        <p class="product-brand">{{ product.brand }}</p>
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.description }}</p>
+        <div class="rating">★★★★★ <span>4.8</span></div>
+        <strong class="detail-price">{{ product.price }} ₽</strong>
+        <a class="primary" href="{{ url_for('review') }}">Оставить отзыв</a>
+        <a class="text-link" href="{{ url_for('catalog') }}">Вернуться в каталог</a>
+    </div>
+</section>
+{% endblock %}

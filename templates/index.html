@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}GLOW ROOM — косметика на каждый день{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="hero-copy">
+        <p class="eyebrow">Ежедневный уход</p>
+        <h1>Понятные средства для живой кожи</h1>
+        <p>Собрали уход и макияж, которые легко встроить в обычный день. Без сложных ритуалов и громких обещаний.</p>
+        <a class="primary" href="{{ url_for('catalog') }}">Открыть каталог</a>
+    </div>
+</section>
+<section class="section-head">
+    <div>
+        <p class="eyebrow">Выбор покупателей</p>
+        <h2>Бестселлеры</h2>
+    </div>
+    <a href="{{ url_for('catalog') }}">Смотреть все</a>
+</section>
+<section class="product-grid featured">
+    {% for item in products %}{% include "_product_card.html" %}{% endfor %}
+</section>
+<section class="editorial">
+    <div class="editorial-image" role="img" aria-label="Косметические средства"></div>
+    <div>
+        <p class="eyebrow">Наша формула</p>
+        <h2>Меньше шагов, больше внимания к себе</h2>
+        <p>Мы отбираем продукты с понятным назначением, удобными текстурами и спокойным дизайном. В каталоге легко найти базовый уход или акцент для макияжа.</p>
+        <a class="text-link" href="{{ url_for('review') }}">Поделиться впечатлением</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Каталог — GLOW ROOM{% endblock %}
+{% block content %}
+<section class="page-heading">
+    <p class="eyebrow">Каталог</p>
+    <h1>Средства для ухода и макияжа</h1>
+    <p>Фильтр передается на сервер как GET-параметр и меняет состав каталога.</p>
+</section>
+<nav class="filters" aria-label="Категории товаров">
+    <a class="{{ 'active' if category == 'all' }}" href="{{ url_for('catalog') }}">Все товары</a>
+    <a class="{{ 'active' if category == 'care' }}" href="{{ url_for('catalog', category='care') }}">Уход</a>
+    <a class="{{ 'active' if category == 'makeup' }}" href="{{ url_for('catalog', category='makeup') }}">Макияж</a>
+</nav>
+<section class="product-grid catalog-grid">
+    {% for item in products %}{% include "_product_card.html" %}{% endfor %}
+</section>
+{% endblock %}

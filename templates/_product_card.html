@@ -1,0 +1,6 @@
+<article class="product-card">
+    <a class="product-image" href="{{ url_for('product', product_id=item.id) }}" style="--position: {{ item.position }}" aria-label="{{ item.name }}"></a>
+    <p class="product-brand">{{ item.brand }}</p>
+    <h3><a href="{{ url_for('product', product_id=item.id) }}">{{ item.name }}</a></h3>
+    <strong>{{ item.price }} ₽</strong>
+</article>
